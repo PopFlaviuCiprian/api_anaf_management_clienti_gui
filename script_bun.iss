@@ -2,11 +2,11 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 ; Non-commercial use only
 
-#define MyAppName "Gestiune Clienti v4"
-#define MyAppVersion "1.5"
+#define MyAppName "Gestiune Clienti v5"
+#define MyAppVersion "2.0"
 #define MyAppPublisher "Pop Ciprian"
 #define MyAppURL "https://www.example.com/"
-#define MyAppExeName "Gestiune_clienti_sqlite_portabil_v4.exe"
+#define MyAppExeName "Gestiune_clienti_sqlite_portabil_v5.exe"
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".exe"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
@@ -37,7 +37,7 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
 OutputBaseFilename=App gestionare clienti v4
-SetupIconFile=D:\Gestionare_clienti_cu SQLite\pythonProject1\icon.ico
+SetupIconFile=D:\Gestionare_clienti_API_ANAF_oficial\icon.ico
 SolidCompression=yes
 WizardStyle=modern dynamic
 
@@ -49,14 +49,14 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 
-Source: "D:\Gestionare_clienti_cu SQLite\pythonProject1\dist\Gestiune_clienti_sqlite_portabil_v4\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Gestionare_clienti_API_ANAF_oficial\dist\Gestiune_clienti_sqlite_portabil_v5\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 Source: "D:\Gestionare_clienti_cu SQLite\pythonProject1\template\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "D:\Gestionare_clienti_cu SQLite\pythonProject1\icons\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Gestionare_clienti_API_ANAF_oficial\icons\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
-Source: "D:\Gestionare_clienti_cu SQLite\pythonProject1\baza_date.db"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Gestionare_clienti_cu SQLite\pythonProject1\mapping_model_amef.xlsx"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Gestionare_clienti_cu SQLite\pythonProject1\mapping_tehnician.xlsx"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Gestionare_clienti_API_ANAF_oficial\baza_date.db"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Gestionare_clienti_API_ANAF_oficial\mapping_model_amef.xlsx"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Gestionare_clienti_API_ANAF_oficial\mapping_tehnician.xlsx"; DestDir: "{app}"; Flags: ignoreversion
 
 [Registry]
 Root: HKA; Subkey: "Software\Classes\{#MyAppAssocExt}\OpenWithProgids"; ValueType: string; ValueName: "{#MyAppAssocKey}"; ValueData: ""; Flags: uninsdeletevalue
