@@ -3500,6 +3500,33 @@ def genereaza_dosar_asistenta():
 Finalul functie pentru dosar asistenta
 """
 
+"""
+Functie pentru legenda explicativa culori in functie de statusul abonamentelor
+"""
+def creeaza_legenda_status(parent):
+    frame = tk.Frame(parent)
+
+    def bulina(color, text):
+        row = tk.Frame(frame)
+        row.pack(anchor="w", pady=2)
+
+        canvas = tk.Canvas(row, width=14, height=14, highlightthickness=0)
+        canvas.pack(side="left")
+        canvas.create_oval(2, 2, 12, 12, fill=color, outline="")
+
+        tk.Label(row, text=text, font=("Segoe UI", 9)).pack(side="left", padx=6)
+
+    bulina("#008000", "Abonament in termen")  # Verde
+    bulina("#f1c40f", "Abonamentul expiră în urmatoarele 30 de zile") # Galben
+    bulina("#e74c3c", "Abonament expirat")  # Rosu
+    bulina("#95a5a6", "Firma Inchisa, Suspendata, AMEF Defiscalizat, Renuntat") # Gri
+
+
+    return frame
+
+
+
+
 # =========================
 # User Interface setup
 # =========================
@@ -3756,6 +3783,16 @@ class ToolTip:
 frame_butoane = tk.Frame(root)
 frame_butoane.grid(row=1, column=0, columnspan=3, pady=10)
 
+# Frame pentru legenda culori
+frame_btn = tk.Frame(frame_butoane)
+frame_btn.grid(row=0, column=0)
+
+
+frame_legenda = tk.Frame(frame_butoane)
+frame_legenda.grid(row=0, column=1, padx=20, sticky="n")
+legenda = creeaza_legenda_status(frame_legenda)
+legenda.pack(anchor="n")
+
 btn_params = [
     ("Caută cu API", lambda: cauta_firma(), "#d4f0d0", "Caută firma folosind API-ul ANAF"),
     ("Salvează client", lambda: salveaza_client(), "#cfe2f3", "Salvează clientul în baza de date locală"),
@@ -3776,7 +3813,7 @@ btn_params = [
 ]
 for i, (text, cmd, color, descriere) in enumerate(btn_params):
     btn = tk.Button(
-        frame_butoane,
+        frame_btn,
         text=text,
         command=cmd,
         width=16,

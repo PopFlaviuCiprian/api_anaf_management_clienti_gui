@@ -2,8 +2,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 ; Non-commercial use only
 
-#define MyAppName "Gestiune Clienti v5"
-#define MyAppVersion "2.0"
+#define MyAppName "Gestiune Clienti v5.1"
+#define MyAppVersion "2.1"
 #define MyAppPublisher "Pop Ciprian"
 #define MyAppURL "https://www.example.com/"
 #define MyAppExeName "Gestiune_clienti_sqlite_portabil_v5.exe"
@@ -36,7 +36,7 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
-OutputBaseFilename=App gestionare clienti v4
+OutputBaseFilename=App gestionare clienti v5.1
 SetupIconFile=D:\Gestionare_clienti_API_ANAF_oficial\icon.ico
 SolidCompression=yes
 WizardStyle=modern dynamic
@@ -49,9 +49,9 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 
-Source: "D:\Gestionare_clienti_API_ANAF_oficial\dist\Gestiune_clienti_sqlite_portabil_v5\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Gestionare_clienti_API_ANAF_oficial\dist\Gestiune_clienti_sqlite_portabil_v5.1\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
-Source: "D:\Gestionare_clienti_cu SQLite\pythonProject1\template\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Gestionare_clienti_API_ANAF_oficial\template\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "D:\Gestionare_clienti_API_ANAF_oficial\icons\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 Source: "D:\Gestionare_clienti_API_ANAF_oficial\baza_date.db"; DestDir: "{app}"; Flags: ignoreversion
