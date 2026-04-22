@@ -1007,8 +1007,8 @@ def salveaza_client():
 
     # verific client existent
     try:
-        cursor.execute("SELECT Nr_Crt FROM tabela_date_clienti WHERE Cui=? OR Reg_Comert=?",
-                       (data["cui"], data["reg_comert"]))
+        cursor.execute("SELECT Nr_Crt FROM tabela_date_clienti WHERE Cui=?",
+                       (data["cui"],))
         result = cursor.fetchone()
 
         if result:
